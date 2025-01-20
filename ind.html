@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comforting Messages</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            background-color: yellow;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Assalamu Alaikum! How are you feeling today?</h1>
+    <p>Enter your mood (e.g., happy, sad, anxious, tired, grateful, jealous, crying, fearful):</p>
+    <input type="text" id="moodInput" placeholder="Enter mood" />
+    <button onclick="getMessage()">Get Comforting Message</button>
+
+    <div id="result" class="result">
+        <p id="quranVerse"></p>
+        <p id="note"></p>
+        <p id="note2"></p>
+    </div>
+</div>
+
+<script>
+    function getMessage() {
+        const mood = document.getElementById("moodInput").value.toLowerCase().trim();
+        
+        const versesAndNotes = {
+            "happy": {
+                "verse": "And [remember] when your Lord proclaimed: 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.' (Quran 14:7)",
+                "note": "Happiness is a blessing from Allah. Cherish it and spread it to others!",
+                "note2": "Oyee chooze jaan, it makes me so happy that you're happy! Always stay this way; I'm always rooting for your success."
+            },
+            "sad": {
+                "verse": "So verily, with the hardship, there is relief. (Quran 94:6)",
+                "note": "Remember, sadness is temporary. Turn to Allah, and you will find peace.",
+                "note2": "Aww meri jaan, kya hua? Kisne tang kiya? Unki tange torti hon! Text me; I will reply to you, okay? I'm always here for you."
+            },
+            "anxious": {
+                "verse": "Indeed, in the remembrance of Allah do hearts find rest. (Quran 13:28)",
+                "note": "Take a deep breath and make dua. Trust Allah's plan.",
+                "note2": "Oho mera bacha, listen—you are the best to me in every condition. My love and care for you will only increase. I'm proud of you because you never lose hope. You're my source of pride, okay? Text me; I'm always here to listen without judging."
+            },
+            "tired": {
+                "verse": "Allah does not burden a soul beyond that it can bear. (Quran 2:286)",
+                "note": "Your effort is seen by Allah. Rest, and continue with renewed strength.",
+                "note2": "My lil boy, it's fine to feel exhausted. Take a break, do something that recharges you. Text me; let me try to lighten your mood. Rest for a while and drink some water."
+            },
+            "grateful": {
+                "verse": "And He gave you from all you asked of Him. And if you should count the favor of Allah, you could not enumerate them. (Quran 14:34)",
+                "note": "Gratitude is the key to contentment. Keep thanking Allah for His blessings!",
+                "note2": "Good! What are you grateful for, oyeee? Text me and let me know; I'm waiting."
+            },
+            "default": {
+                "verse": "Indeed, Allah is with the patient. (Quran 2:153)",
+                "note": "Whatever you feel, know that Allah is always there for you.",
+                "note2": "Meri jaan, I'm here. Text me, call me—I'll always listen to you, my lil chooza. I want to hug you until you feel better. I'm always here for you."
+            },
+            "crying": {
+                "verse": "Do not grieve; indeed, Allah is with us. (Quran 9:40)",
+                "note": "If no one is with you, then Allah is. He will listen and make everything easier for you.",
+                "note2": "Jani, if I could, I would hold you in my arms, let you cry, console you, rub your back, adore you, and care for you. Remember, I love you even at your lowest."
+            },
+            "fearful": {
+                "verse": "And do not fear them but fear Me if you are [indeed] believers. (Quran 3:175)",
+                "note": "Allah is the best planner, so jani, don't fear anything. Take risks and move on.",
+                "note2": "Han g darling, what are you fearing? Jaldi text karo; let's discuss it. Sweetheart, I'm always here by your side. I love and care for you, so don't hide anything, okay?"
+            },
+            "jealousy": {
+                "verse": "Indeed, Allah is the Provider, the firm possessor of strength. (Quran 51:58)",
+                "note": "Allah provides for everyone according to His wisdom.",
+                "note2": "Sweetie, you are irreplaceable in my heart. The love and care I carry for you—no one else can take it. Be a kid around me or an adult; I love both your sides. You are the best to me, okay? I love you, mister. Take care of yourself and text me; let's discuss it."
+            }
+        };
+
+        const response = versesAndNotes[mood] || versesAndNotes["default"];
+
+        document.getElementById("result").style.display = "block";
+        document.getElementById("quranVerse").textContent = Quranic Verse: ${response.verse};
+        document.getElementById("note").textContent = Note: ${response.note};
+        document.getElementById("note2").textContent = Note2: ${response.note2};
+    }
+</script>
+</body>
+</html>
